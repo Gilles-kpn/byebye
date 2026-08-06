@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Politique de confidentialité — Bye-Bye</title>
+        <meta
+            name="description"
+            content="Politique de confidentialité de l'application Bye-Bye : collecte, usage et protection de vos données personnelles." />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500;600&family=Inter:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet" />
+        <link rel="stylesheet" href="legal.css" />
+    </head>
+    <body>
+        <header class="topbar">
+            <div class="topbar-inner">
+                <a href="#" class="brand">
+                    <span class="brand-mark">
+                        <img src="./assets/icons/logo.png" alt="Logo" class="logo" width="32" height="32" />
+                    </span>
+                    Bye-Bye
+                </a>
+                <nav class="doc-nav" aria-label="Documents légaux">
+                    <a href="politique-confidentialite.html" class="active">Confidentialité</a>
+                </nav>
+            </div>
+        </header>
+
+        <div class="doc-hero">
+            <span class="doc-eyebrow">Document légal</span>
+            <h1 class="doc-title">Politique de confidentialité</h1>
+            <div class="doc-meta">
+                <span><strong>Dernière mise à jour :</strong> 6 août 2026</span>
+                <span><strong>Version :</strong> 1.0</span>
+                <span><strong>Applicable à :</strong> Bye-Bye </span>
+            </div>
+            <p class="doc-intro">
+                Cette politique explique quelles données Bye-Bye collecte, pourquoi, et comment elles sont protégées.
+                Nous avons rédigé ce document pour qu'il soit compris sans formation juridique — si un passage reste
+                flou, écrivez-nous à <a href="mailto:okpanou2@gmail.com">okpanou2@gmail.com</a>.
+            </p>
+        </div>
+
+        <div class="doc-body">
+            <nav class="toc" aria-label="Table des matières">
+                <div class="toc-label">Sommaire</div>
+                <ol>
+                    <li><a href="#collecte">Données collectées</a></li>
+                    <li><a href="#finalites">Finalités du traitement</a></li>
+                    <li><a href="#base-legale">Base légale</a></li>
+                    <li><a href="#partage">Partage avec des tiers</a></li>
+                    <li><a href="#stockage">Stockage et sécurité</a></li>
+                    <li><a href="#conservation">Durée de conservation</a></li>
+                    <li><a href="#droits">Vos droits</a></li>
+                    <li><a href="#cookies">Cookies et traceurs</a></li>
+                    <li><a href="#mineurs">Protection des mineurs</a></li>
+                    <li><a href="#transferts">Transferts internationaux</a></li>
+                    <li><a href="#modifications">Modifications de cette politique</a></li>
+                    <li><a href="#contact">Nous contacter</a></li>
+                </ol>
+            </nav>
+
+            <article class="doc-content">
+                <section id="collecte">
+                    <span class="section-num">01</span>
+                    <h2>Données collectées</h2>
+                    <p>
+                        Bye-Bye collecte uniquement les données strictement nécessaires au fonctionnement du service.
+                        Nous distinguons trois catégories de données :
+                    </p>
+
+                    <h3>Données d'identification et de profil</h3>
+                    <ul>
+                        <li>Adresse e-mail (via Firebase Authentication ou Sign in with Apple)</li>
+                        <li>Nom affiché</li>
+                        <li>Région et pays de résidence, utilisés pour déterminer vos jours fériés locaux</li>
+                        <li>Langue et préférences d'affichage (thème clair/sombre)</li>
+                    </ul>
+
+                    <h3>Données professionnelles liées aux congés</h3>
+                    <ul>
+                        <li>
+                            Informations contractuelles : nombre de jours de congé annuels, type de contrat, date de
+                            début, ancienneté
+                        </li>
+                        <li>Historique de vos demandes de congé (dates, statut, type)</li>
+                        <li>Solde de congés et statistiques d'utilisation (jours posés, jours restants, ROI moyen)</li>
+                    </ul>
+
+                    <h3>Données techniques et d'usage</h3>
+                    <ul>
+                        <li>Identifiant unique d'appareil, utilisé pour les notifications push</li>
+                        <li>
+                            Journaux d'erreurs techniques (via Firebase Crashlytics), sans lien avec votre identité
+                            personnelle
+                        </li>
+                        <li>
+                            Données d'abonnement Stripe (identifiant client, statut de paiement) si vous souscrivez à
+                            Bye-Bye Pro
+                        </li>
+                    </ul>
+
+                    <div class="callout callout-info">
+                        <span class="callout-icon">ℹ️</span>
+                        <p>
+                            Bye-Bye ne collecte jamais votre position géographique précise, vos contacts, ni le contenu
+                            d'autres applications sur votre appareil.
+                        </p>
+                    </div>
+                </section>
+
+                <section id="finalites">
+                    <span class="section-num">02</span>
+                    <h2>Finalités du traitement</h2>
+                    <p>Chaque donnée collectée sert un objectif précis et déclaré :</p>
+                    <table class="doc-table">
+                        <thead>
+                            <tr>
+                                <th>Donnée</th>
+                                <th>Finalité</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Région / pays</td>
+                                <td>Calculer les jours fériés applicables et les opportunités de congé</td>
+                            </tr>
+                            <tr>
+                                <td>Contrat de travail</td>
+                                <td>Déterminer votre solde de congés et générer des recommandations personnalisées</td>
+                            </tr>
+                            <tr>
+                                <td>Historique des demandes</td>
+                                <td>Afficher votre calendrier, vos statistiques et votre progression annuelle</td>
+                            </tr>
+                            <tr>
+                                <td>Adresse e-mail</td>
+                                <td>Authentification, communication de service, récupération de compte</td>
+                            </tr>
+                            <tr>
+                                <td>Identifiant d'appareil</td>
+                                <td>Envoi de rappels sur les opportunités et alertes d'expiration</td>
+                            </tr>
+                            <tr>
+                                <td>Données de paiement</td>
+                                <td>Traitement de l'abonnement Bye-Bye Pro via Stripe</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>
+                        Nous n'utilisons jamais vos données pour des finalités publicitaires. Bye-Bye ne diffuse aucune
+                        publicité et ne revend aucune donnée à des tiers à des fins commerciales.
+                    </p>
+                </section>
+
+                <section id="base-legale">
+                    <span class="section-num">03</span>
+                    <h2>Base légale du traitement</h2>
+                    <p>
+                        Selon votre juridiction, le traitement de vos données repose sur l'une ou plusieurs des bases
+                        suivantes :
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>L'exécution du contrat</strong> qui vous lie à Bye-Bye lorsque vous créez un compte
+                            et utilisez le service
+                        </li>
+                        <li>
+                            <strong>Votre consentement explicite</strong>, notamment pour les notifications push et les
+                            communications marketing optionnelles
+                        </li>
+                        <li>
+                            <strong>Notre intérêt légitime</strong> à améliorer le service, détecter les anomalies
+                            techniques et prévenir la fraude
+                        </li>
+                        <li>
+                            <strong>Une obligation légale</strong>, par exemple la conservation de certaines données de
+                            facturation
+                        </li>
+                    </ul>
+                </section>
+
+                <section id="partage">
+                    <span class="section-num">04</span>
+                    <h2>Partage avec des tiers</h2>
+                    <p>
+                        Bye-Bye ne vend, ne loue et ne partage jamais vos données personnelles avec des tiers à des fins
+                        commerciales ou publicitaires. Nous faisons appel à un nombre restreint de sous-traitants
+                        techniques, chacun encadré par un accord de traitement des données :
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>Google Firebase</strong> (Google LLC) — hébergement de la base de données,
+                            authentification, notifications push et suivi des erreurs techniques
+                        </li>
+                        <li>
+                            <strong>Stripe, Inc.</strong> — traitement sécurisé des paiements pour l'abonnement Bye-Bye
+                            Pro. Bye-Bye ne stocke jamais vos coordonnées bancaires
+                        </li>
+                        <li>
+                            <strong>Nager.Date</strong> — fournisseur externe des jours fériés officiels par pays et
+                            région, interrogé sans transmission de données personnelles
+                        </li>
+                    </ul>
+                    <p>
+                        Ces prestataires n'ont accès qu'aux données strictement nécessaires à l'exécution de leur
+                        service et sont contractuellement tenus de les protéger selon des standards au moins équivalents
+                        à ceux de Bye-Bye.
+                    </p>
+                    <div class="callout callout-warning">
+                        <span class="callout-icon">⚠️</span>
+                        <p>
+                            Nous pouvons divulguer des données si la loi l'exige, notamment en réponse à une demande
+                            judiciaire valide, ou pour protéger les droits, la sécurité et la propriété de Bye-Bye et de
+                            ses utilisateurs.
+                        </p>
+                    </div>
+                </section>
+
+                <section id="stockage">
+                    <span class="section-num">05</span>
+                    <h2>Stockage et sécurité</h2>
+                    <p>
+                        Vos données sont hébergées sur l'infrastructure Google Cloud Platform / Firebase, protégée par
+                        des règles de sécurité strictes (Firestore Security Rules) garantissant que seul vous — et aucun
+                        autre utilisateur — pouvez accéder à vos propres données.
+                    </p>
+                    <p>Les mesures de protection mises en œuvre incluent :</p>
+                    <ul>
+                        <li>Chiffrement des données en transit (TLS) et au repos</li>
+                        <li>Authentification requise pour tout accès aux données, sans exception</li>
+                        <li>
+                            Règles d'accès strictes empêchant tout utilisateur de consulter les données d'un autre
+                            compte
+                        </li>
+                        <li>Journalisation des accès administratifs à des fins d'audit</li>
+                    </ul>
+                    <p>
+                        Aucun système n'est infaillible à 100 %. En cas d'incident de sécurité affectant vos données
+                        personnelles, nous vous en informerons dans les meilleurs délais, conformément aux obligations
+                        légales applicables.
+                    </p>
+                </section>
+
+                <section id="conservation">
+                    <span class="section-num">06</span>
+                    <h2>Durée de conservation</h2>
+                    <p>
+                        Vos données sont conservées tant que votre compte est actif. Lorsque vous supprimez votre compte
+                        :
+                    </p>
+                    <ul>
+                        <li>
+                            L'ensemble de vos données professionnelles (congés, contrats, opportunités, notifications)
+                            est définitivement supprimé de nos bases actives dans un délai raisonnable après la demande
+                        </li>
+                        <li>
+                            Une archive minimale et anonymisée peut être conservée à des fins de conformité comptable et
+                            fiscale, lorsque la loi l'exige, pour une durée n'excédant pas celle légalement prescrite
+                        </li>
+                        <li>
+                            Les données de facturation Stripe suivent la politique de conservation propre à Stripe,
+                            indépendante de Bye-Bye
+                        </li>
+                    </ul>
+                </section>
+
+                <section id="droits">
+                    <span class="section-num">07</span>
+                    <h2>Vos droits</h2>
+                    <p>
+                        Conformément aux réglementations applicables (RGPD pour les résidents européens, LPRPDE au
+                        Canada, et lois équivalentes selon votre juridiction), vous disposez des droits suivants sur vos
+                        données :
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>Droit d'accès</strong> — obtenir une copie des données que nous détenons sur vous
+                        </li>
+                        <li><strong>Droit de rectification</strong> — corriger toute donnée inexacte ou incomplète</li>
+                        <li>
+                            <strong>Droit à l'effacement</strong> — demander la suppression de votre compte et de vos
+                            données, directement disponible depuis les paramètres de l'application
+                        </li>
+                        <li>
+                            <strong>Droit à la portabilité</strong> — recevoir vos données dans un format structuré et
+                            lisible par machine
+                        </li>
+                        <li>
+                            <strong>Droit d'opposition</strong> — vous opposer à certains traitements, notamment les
+                            notifications
+                        </li>
+                        <li>
+                            <strong>Droit de retirer votre consentement</strong> à tout moment, sans affecter la licéité
+                            des traitements antérieurs
+                        </li>
+                    </ul>
+                    <p>
+                        Pour exercer l'un de ces droits, contactez-nous à
+                        <a href="mailto:okpanou2@gmail.com">okpanou2@gmail.com</a>. Nous répondons à toute demande dans
+                        un délai maximal de 30 jours.
+                    </p>
+                </section>
+
+                <section id="cookies">
+                    <span class="section-num">08</span>
+                    <h2>Cookies et traceurs</h2>
+                    <p>
+                        Bye-Bye est une application mobile native et n'utilise pas de cookies au sens web traditionnel.
+                        L'application utilise cependant des identifiants techniques équivalents :
+                    </p>
+                    <ul>
+                        <li>Un jeton d'authentification local, nécessaire pour maintenir votre session connectée</li>
+                        <li>
+                            Un jeton d'appareil Firebase Cloud Messaging, nécessaire à l'envoi des notifications push
+                        </li>
+                    </ul>
+                    <p>Aucun de ces identifiants n'est utilisé à des fins de suivi publicitaire inter-applications.</p>
+                </section>
+
+                <section id="mineurs">
+                    <span class="section-num">09</span>
+                    <h2>Protection des mineurs</h2>
+                    <p>
+                        Bye-Bye est destiné aux personnes en âge de travailler et disposant d'un contrat de travail. Le
+                        service n'est pas conçu pour les enfants de moins de 16 ans, et nous ne collectons pas sciemment
+                        de données les concernant. Si vous pensez qu'un mineur nous a communiqué des données
+                        personnelles, contactez-nous immédiatement à
+                        <a href="mailto:okpanou2@gmail.com">okpanou2@gmail.com</a> afin que nous puissions procéder à
+                        leur suppression.
+                    </p>
+                </section>
+
+                <section id="transferts">
+                    <span class="section-num">10</span>
+                    <h2>Transferts internationaux</h2>
+                    <p>
+                        Nos prestataires techniques (Google Firebase, Stripe) peuvent traiter des données sur des
+                        serveurs situés hors de votre pays de résidence, notamment aux États-Unis. Ces transferts sont
+                        encadrés par des mécanismes reconnus par les autorités de protection des données, tels que les
+                        clauses contractuelles types de la Commission européenne ou des certifications équivalentes,
+                        garantissant un niveau de protection adéquat.
+                    </p>
+                </section>
+
+                <section id="modifications">
+                    <span class="section-num">11</span>
+                    <h2>Modifications de cette politique</h2>
+                    <p>
+                        Nous pouvons mettre à jour cette politique de confidentialité pour refléter des évolutions
+                        légales, techniques ou fonctionnelles du service. Toute modification substantielle vous sera
+                        notifiée par e-mail ou via une notification dans l'application, au moins 15 jours avant son
+                        entrée en vigueur. La date de dernière mise à jour figure en haut de ce document.
+                    </p>
+                </section>
+
+                <section id="contact">
+                    <span class="section-num">12</span>
+                    <h2>Nous contacter</h2>
+                    <p>Pour toute question relative à cette politique ou au traitement de vos données personnelles :</p>
+                    <ul>
+                        <li>E-mail : <a href="mailto:okpanou2@gmail.com">okpanou2@gmail.com</a></li>
+                    </ul>
+                    <p>
+                        Si vous estimez que vos droits n'ont pas été respectés, vous pouvez également déposer une
+                        réclamation auprès de l'autorité de protection des données compétente dans votre pays de
+                        résidence.
+                    </p>
+                </section>
+            </article>
+        </div>
+
+        <footer class="doc-footer">
+            <div class="doc-footer-inner">
+                <p>© 2026 Bye-Bye. Tous droits réservés.</p>
+                <nav class="doc-footer-links" aria-label="Liens légaux">
+                    <a href="politique-confidentialite.html">Confidentialité</a>
+                    <a href="cgu.html">CGU</a>
+                    <a href="politique-remboursement.html">Remboursement</a>
+                </nav>
+            </div>
+        </footer>
+
+        <button class="back-to-top" id="backToTop" aria-label="Retour en haut">↑</button>
+
+        <script>
+            const backToTop = document.getElementById('backToTop');
+            window.addEventListener('scroll', () => {
+                backToTop.classList.toggle('visible', window.scrollY > 480);
+            });
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        </script>
+    </body>
+</html>
