@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Foreground service: video rendering — Cadence</title>
+        <meta name="description" content="Demonstration video and description of the foreground service used by Cadence to render videos on the device." />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500;600&family=Inter:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet" />
+        <link rel="stylesheet" href="./styles/cadence.css" />
+        <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png" />
+    </head>
+    <body>
+        <header class="topbar">
+            <div class="topbar-inner">
+                <a href="./index.html" class="brand">
+                    <span class="brand-mark"><img src="./assets/logo.png" alt="" width="32" height="32" /></span>
+                    Cadence
+                </a>
+                <nav class="doc-nav" aria-label="Documents"><a href="politique-confidentialite.html">Confidentialité</a><a href="securite.html">Sécurité</a><a href="suppression-compte.html">Suppression du compte</a></nav>
+            </div>
+        </header>
+
+        <div class="doc-hero">
+            <span class="doc-eyebrow">Google Play review</span>
+            <h1 class="doc-title">Foreground service: video rendering</h1>
+            <div class="doc-meta">
+                <span><strong>Last updated :</strong> October 9, 2026</span>
+                <span><strong>Version :</strong> 1.0</span>
+                <span><strong>Applies to :</strong> Cadence (Android)</span>
+            </div>
+            <p class="doc-intro">Cadence uses a foreground service while a video is being rendered on the device. This page documents it for the Google Play foreground service declaration.</p>
+        </div>
+
+        <div class="doc-body">
+            <nav class="toc" aria-label="Table des matières">
+                <div class="toc-label">Contents</div>
+                <ol><li><a href="#video">Demonstration video</a></li><li><a href="#usage">What the foreground service does</a></li><li><a href="#types">Foreground service types and permissions</a></li><li><a href="#reproduce">How to see it in the app</a></li></ol>
+            </nav>
+            <article class="doc-content">
+                <section id="video">
+                    <span class="section-num">01</span>
+                    <h2>Demonstration video</h2>
+                    <p>This video was recorded on a phone running Cadence. It shows a render being started, the app being left while the render continues, and the persistent notification that the foreground service displays.</p>
+                    <video controls playsinline preload="metadata" width="320" style="max-width:100%;border-radius:14px;border:1px solid var(--color-border);margin:12px 0" src="./media/foreground-service-demo.mp4">
+                        Your browser cannot play this video. <a href="./media/foreground-service-demo.mp4">Download it</a>.
+                    </video>
+                    <p><a href="./media/foreground-service-demo.mp4">Direct link to the video file</a> (MP4, 39 seconds, English captions).</p>
+                    <ol class="steps">
+                        <li><strong>0:00</strong> — In a project, the user taps <em>Export › Render the video</em>. The render starts and the progress is shown in the app.</li>
+                        <li><strong>0:14</strong> — The user leaves the app (Home). The render keeps running. The notification <em>"Rendu · project name"</em> with its progress bar is visible in the notification shade. (The quick-settings tiles are masked in the video for privacy.)</li>
+                        <li><strong>0:30</strong> — The user taps the notification and returns to the app, where the render is still in progress.</li>
+                    </ol>
+
+                </section>
+
+                <section id="usage">
+                    <span class="section-num">02</span>
+                    <h2>What the foreground service does</h2>
+                    <p>Cadence turns a talking video into an animated vertical video (1080 × 1920). The final video is produced <strong>on the device</strong>: frames are generated and encoded locally with FFmpeg, which is local media transcoding. A full render takes several minutes.</p>
+                    <p>This is a task the user starts and expects to finish: they tap <em>Render the video</em>, then can leave the app. Without a foreground service, Android would stop the process shortly after the app goes to the background, and the render would be lost.</p>
+                    <ul>
+                        <li><strong>Started by the user:</strong> the service starts only when the user taps <em>Render the video</em> (or <em>Quick preview</em>, the first 10 seconds).</li>
+                        <li><strong>Visible:</strong> a persistent notification titled with the project name shows the progress (percentage and progress bar). Tapping it reopens the app.</li>
+                        <li><strong>Short-lived:</strong> the service stops as soon as the render ends, fails or is cancelled. A final notification then reports the result.</li>
+                        <li><strong>Local only:</strong> no upload, no sync with a server. The service does not run in the background for any other reason.</li>
+                    </ul>
+
+                </section>
+
+                <section id="types">
+                    <span class="section-num">03</span>
+                    <h2>Foreground service types and permissions</h2>
+                    <table class="doc-table"><thead><tr><th>Permission</th><th>Use in Cadence</th></tr></thead><tbody><tr><td>FOREGROUND_SERVICE_MEDIA_PROCESSING</td><td>Local transcoding: rendering and encoding the final video on the device</td></tr><tr><td>FOREGROUND_SERVICE_DATA_SYNC</td><td>Declared for the same single service, <code>RenderService</code>, for the same task: local media transcoding of the render (no network synchronisation)</td></tr><tr><td>POST_NOTIFICATIONS</td><td>Show the render progress and the end-of-render notification</td></tr></tbody></table>
+                    <p>Both types are declared on one service, <code>RenderService</code>, in the app manifest: <code>android:foregroundServiceType="dataSync|mediaProcessing"</code>.</p>
+
+                </section>
+
+                <section id="reproduce">
+                    <span class="section-num">04</span>
+                    <h2>How to see it in the app</h2>
+                    <ol class="steps">
+                        <li>Open Cadence and sign in.</li>
+                        <li>On the <em>Studio</em> tab, open a demo project (<em>Projet de démonstration</em>).</li>
+                        <li>Tap the export button (top right), then <em>Rendre la vidéo</em> (Render the video).</li>
+                        <li>Press Home and open the notification shade: the render notification with its progress bar is shown.</li>
+                    </ol>
+
+                </section>
+            </article>
+        </div>
+
+        <footer class="doc-footer">
+            <div class="doc-footer-inner">
+                <p>© 2026 Cadence. Tous droits réservés.</p>
+                <nav class="doc-footer-links" aria-label="Liens">
+                    <a href="politique-confidentialite.html">Confidentialité</a>
+                    <a href="securite.html">Sécurité</a>
+                    <a href="suppression-compte.html">Suppression du compte</a>
+                    <a href="mailto:okpanou2@gmail.com">Contact</a>
+                </nav>
+            </div>
+        </footer>
+    </body>
+</html>
