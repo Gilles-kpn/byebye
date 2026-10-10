@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sécurité et protection des données — Cadence</title>
+        <meta name="description" content="Sécurité de Cadence : où vont vos données, mesures de protection, autorisations Android et déclarations Google Play." />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500;600&family=Inter:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet" />
+        <link rel="stylesheet" href="./styles/cadence.css" />
+        <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png" />
+    </head>
+    <body>
+        <header class="topbar">
+            <div class="topbar-inner">
+                <a href="./index.html" class="brand">
+                    <span class="brand-mark"><img src="./assets/logo.png" alt="" width="32" height="32" /></span>
+                    Cadence
+                </a>
+                <nav class="doc-nav" aria-label="Documents"><a href="politique-confidentialite.html">Confidentialité</a><a href="securite.html" class="active">Sécurité</a><a href="suppression-compte.html">Suppression du compte</a></nav>
+            </div>
+        </header>
+
+        <div class="doc-hero">
+            <span class="doc-eyebrow">Sécurité</span>
+            <h1 class="doc-title">Sécurité et protection des données</h1>
+            <div class="doc-meta">
+                <span><strong>Dernière mise à jour :</strong> 9 octobre 2026</span>
+                <span><strong>Version :</strong> 1.0</span>
+                <span><strong>Applicable à :</strong> Cadence (Android)</span>
+            </div>
+            <p class="doc-intro">Ce qui reste sur votre téléphone, ce qui en sort, et comment Cadence protège vos données.</p>
+        </div>
+
+        <div class="doc-body">
+            <nav class="toc" aria-label="Table des matières">
+                <div class="toc-label">Sommaire</div>
+                <ol><li><a href="#principes">Nos principes</a></li><li><a href="#flux">Où vont vos données</a></li><li><a href="#protection">Mesures de protection</a></li><li><a href="#autorisations">Autorisations Android</a></li><li><a href="#google-play">Pour Google Play : sécurité des données</a></li><li><a href="#faille">Signaler une faille</a></li></ol>
+            </nav>
+            <article class="doc-content">
+                <section id="principes">
+                    <span class="section-num">01</span>
+                    <h2>Nos principes</h2>
+                    <ul>
+                        <li><strong>Vos vidéos restent chez vous.</strong> L'import, le montage et le rendu se font sur le téléphone. Aucun serveur Cadence ne les reçoit.</li>
+                        <li><strong>Vous choisissez ce qui part.</strong> L'IA ne fonctionne qu'avec vos propres clés, ajoutées par vous.</li>
+                        <li><strong>Pas de pistage.</strong> Aucune publicité, aucun outil de statistiques, aucune revente de données.</li>
+                        <li><strong>Le minimum nécessaire.</strong> Seuls l'e-mail et le nom du compte sont conservés par le service de connexion.</li>
+                    </ul>
+
+                </section>
+
+                <section id="flux">
+                    <span class="section-num">02</span>
+                    <h2>Où vont vos données</h2>
+                    <table class="doc-table"><thead><tr><th>Donnée</th><th>Où elle est</th><th>Envoyée à un tiers ?</th></tr></thead><tbody><tr><td>Vidéos, projets, rendus</td><td>Téléphone uniquement</td><td>Non. Pour la transcription en ligne, l'audio part vers Gemini, avec votre clé</td></tr><tr><td>Texte transcrit</td><td>Téléphone</td><td>Gemini ou Claude, avec votre clé, quand vous lancez une analyse</td></tr><tr><td>Clés API</td><td>Espace privé de l'application</td><td>Non. Elles ne servent qu'à appeler le service concerné</td></tr><tr><td>E-mail, nom, identifiant de compte</td><td>Google Firebase</td><td>Non, hors prestataire technique de connexion</td></tr><tr><td>Mots-clés d'illustration</td><td>Téléphone</td><td>Pexels, seulement si vous ajoutez une clé</td></tr></tbody></table>
+
+                </section>
+
+                <section id="protection">
+                    <span class="section-num">03</span>
+                    <h2>Mesures de protection</h2>
+                    <ul>
+                        <li><strong>Chiffrement en transit</strong> : toutes les communications avec les services en ligne passent par HTTPS/TLS.</li>
+                        <li><strong>Isolation Android</strong> : les données de l'application sont stockées dans son espace privé, inaccessible aux autres applications sans accès root.</li>
+                        <li><strong>Connexion</strong> : gérée par Firebase Authentication (mot de passe jamais stocké par Cadence, connexion Google possible).</li>
+                        <li><strong>Compte protégé</strong> : la suppression du compte demande une connexion récente.</li>
+                        <li><strong>Application signée</strong> : chaque version est signée avec une clé de publication, et distribuée via Google Play.</li>
+                        <li><strong>Maîtrise des coûts d'IA</strong> : un budget plafonné évite les dépenses involontaires sur vos clés.</li>
+                    </ul>
+                    <p>Vos clés API sont enregistrées dans l'espace privé de l'application sur votre téléphone. Pour limiter les risques, utilisez des clés dédiées avec un plafond de dépense, et révoquez-les chez le fournisseur si vous perdez votre téléphone.</p>
+
+                </section>
+
+                <section id="autorisations">
+                    <span class="section-num">04</span>
+                    <h2>Autorisations Android</h2>
+                    <p>Cadence demande uniquement les autorisations liées à ses fonctions :</p>
+                    <table class="doc-table"><thead><tr><th>Autorisation</th><th>Pourquoi</th></tr></thead><tbody><tr><td>Internet</td><td>Se connecter, appeler l'IA avec votre clé, télécharger les modèles de transcription et de détourage</td></tr><tr><td>Notifications</td><td>Vous informer de l'avancement et de la fin d'un rendu</td></tr><tr><td>Service au premier plan</td><td>Poursuivre un rendu quand vous quittez l'application</td></tr><tr><td>Empêcher la mise en veille</td><td>Garder le téléphone éveillé pendant un rendu</td></tr><tr><td>Accès aux fichiers vidéo</td><td>Importer vos vidéos et exporter le résultat, via le sélecteur de fichiers du système</td></tr></tbody></table>
+                    <div class="callout callout-info"><span class="callout-icon">ℹ️</span><p>Cadence n'utilise ni le micro, ni la position, ni les contacts, ni l'appareil photo.</p></div>
+
+                </section>
+
+                <section id="google-play">
+                    <span class="section-num">05</span>
+                    <h2>Pour Google Play : sécurité des données</h2>
+                    <p>Résumé des déclarations faites dans la fiche « Sécurité des données » de Cadence sur Google Play :</p>
+                    <table class="doc-table"><thead><tr><th>Question</th><th>Réponse</th></tr></thead><tbody><tr><td>Données collectées par l'application</td><td>Adresse e-mail, nom (facultatif), identifiant de compte</td></tr><tr><td>Raison de la collecte</td><td>Fonctionnement de l'application : création du compte et connexion</td></tr><tr><td>Données partagées à des fins commerciales ou publicitaires</td><td>Aucune</td></tr><tr><td>Publicité ou statistiques</td><td>Aucune</td></tr><tr><td>Chiffrement des données en transit</td><td>Oui (HTTPS/TLS)</td></tr><tr><td>Possibilité de demander la suppression</td><td>Oui : dans l'application, ou <a href="suppression-compte.html">en ligne</a></td></tr><tr><td>Vidéos, audio et projets</td><td>Traités sur l'appareil. Envois à Gemini ou Anthropic uniquement à votre initiative, avec votre clé</td></tr></tbody></table>
+
+                </section>
+
+                <section id="faille">
+                    <span class="section-num">06</span>
+                    <h2>Signaler une faille</h2>
+                    <p>Si vous pensez avoir trouvé une faille de sécurité, écrivez-nous à <a href="mailto:okpanou2@gmail.com">okpanou2@gmail.com</a> en décrivant le problème et les étapes pour le reproduire. Nous accusons réception sous 7 jours et vous tenons informé de la correction. Merci de ne pas divulguer la faille publiquement avant qu'elle soit corrigée.</p>
+
+                </section>
+            </article>
+        </div>
+
+        <footer class="doc-footer">
+            <div class="doc-footer-inner">
+                <p>© 2026 Cadence. Tous droits réservés.</p>
+                <nav class="doc-footer-links" aria-label="Liens">
+                    <a href="politique-confidentialite.html">Confidentialité</a>
+                    <a href="securite.html">Sécurité</a>
+                    <a href="suppression-compte.html">Suppression du compte</a>
+                    <a href="mailto:okpanou2@gmail.com">Contact</a>
+                </nav>
+            </div>
+        </footer>
+    </body>
+</html>
