@@ -68,7 +68,7 @@
                     <ul>
                         <li><strong>Votre consentement</strong> pour les statistiques : vous pouvez les couper à tout moment dans <em>Réglages › Statistiques anonymes</em></li>
                         <li><strong>Notre intérêt légitime</strong> à corriger les plantages et à sécuriser le jeu</li>
-                        <li><strong>L'exécution du contrat</strong> pour les achats intégrés, s'il y en a un jour</li>
+                        <li><strong>L'exécution du contrat</strong> pour les achats intégrés, s'il y en a un jour (paiement par Stripe)</li>
                     </ul>
 
                 </section>
@@ -77,7 +77,7 @@
                     <span class="section-num">04</span>
                     <h2>Partage avec des tiers</h2>
                     <p>Zemi Dede ne vend, ne loue et ne partage jamais vos données à des fins commerciales ou publicitaires.</p>
-                    <table class="doc-table"><thead><tr><th>Service</th><th>Ce qui lui est envoyé</th><th>Quand</th></tr></thead><tbody><tr><td>Google Firebase Analytics et Crashlytics (Google LLC)</td><td>Événements de jeu anonymes et rapports de plantage</td><td>Si les statistiques sont activées et que les services Google sont présents</td></tr><tr><td>Google Play (Google LLC)</td><td>Ce qu'il faut pour vérifier et livrer un achat ou une mise à jour</td><td>Lors d'un achat intégré ou d'une mise à jour proposée par le Play Store</td></tr><tr><td>Autres joueurs du même Wi-Fi</td><td>Votre pseudo, la couleur de votre moto et votre position dans le jeu</td><td>Seulement pendant une partie en réseau local que vous avez lancée ou rejointe</td></tr></tbody></table>
+                    <table class="doc-table"><thead><tr><th>Service</th><th>Ce qui lui est envoyé</th><th>Quand</th></tr></thead><tbody><tr><td>Google Firebase Analytics et Crashlytics (Google LLC)</td><td>Événements de jeu anonymes et rapports de plantage</td><td>Si les statistiques sont activées et que les services Google sont présents</td></tr><tr><td>Google Play (Google LLC)</td><td>Ce qu'il faut pour proposer une mise à jour</td><td>Au lancement, si le jeu vient du Play Store</td></tr><tr><td>Stripe (Stripe, Inc.)</td><td>Votre paiement : carte ou autre moyen saisi sur la page de Stripe, montant, e-mail de reçu</td><td>Seulement si vous faites un achat</td></tr><tr><td>Google Firebase Cloud Functions (Google LLC)</td><td>Identifiant d'installation et produit acheté, pour créer le paiement et livrer l'achat</td><td>Seulement si vous faites un achat</td></tr><tr><td>Autres joueurs du même Wi-Fi</td><td>Votre pseudo, la couleur de votre moto et votre position dans le jeu</td><td>Seulement pendant une partie en réseau local que vous avez lancée ou rejointe</td></tr></tbody></table>
                     <p>Le jeu en réseau local passe directement d'un téléphone à l'autre sur votre Wi-Fi : aucun serveur à nous ne reçoit ces échanges.</p>
                     <div class="callout callout-warning"><span class="callout-icon">⚠️</span><p>Nous pouvons divulguer des données si la loi l'exige, notamment en réponse à une demande judiciaire valide.</p></div>
 
@@ -86,7 +86,7 @@
                 <section id="paiements">
                     <span class="section-num">05</span>
                     <h2>Achats intégrés</h2>
-                    <p>Le jeu est gratuit. Si des achats intégrés sont proposés plus tard, le paiement est entièrement géré par Google Play : nous ne recevons jamais votre numéro de carte ni vos coordonnées bancaires, seulement la confirmation de l'achat.</p>
+                    <p>Le jeu est gratuit. Si des achats intégrés sont proposés plus tard, le paiement se fait sur une page sécurisée de Stripe, prestataire de paiement certifié PCI-DSS. Nous ne recevons jamais votre numéro de carte ni vos coordonnées bancaires : notre serveur (Firebase Cloud Functions) reçoit seulement de Stripe la confirmation du paiement, le produit acheté et le montant, pour vous livrer l'achat. Stripe conserve les données de paiement selon sa propre politique de confidentialité.</p>
 
                 </section>
 
@@ -124,7 +124,7 @@
                 <section id="transferts">
                     <span class="section-num">10</span>
                     <h2>Transferts internationaux</h2>
-                    <p>Google peut traiter les statistiques sur des serveurs situés hors de votre pays, notamment aux États-Unis, dans le cadre de mécanismes reconnus (clauses contractuelles types).</p>
+                    <p>Google et Stripe peuvent traiter des données sur des serveurs situés hors de votre pays, notamment aux États-Unis, dans le cadre de mécanismes reconnus (clauses contractuelles types).</p>
 
                 </section>
 

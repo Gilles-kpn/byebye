@@ -133,17 +133,19 @@ doc("politique-confidentialite.html", "Politique de confidentialité — Zemi De
         ("base-legale", "Base légale",
          ul(["<strong>Votre consentement</strong> pour les statistiques : vous pouvez les couper à tout moment dans <em>Réglages › Statistiques anonymes</em>",
              "<strong>Notre intérêt légitime</strong> à corriger les plantages et à sécuriser le jeu",
-             "<strong>L'exécution du contrat</strong> pour les achats intégrés, s'il y en a un jour"])),
+             "<strong>L'exécution du contrat</strong> pour les achats intégrés, s'il y en a un jour (paiement par Stripe)"])),
         ("partage", "Partage avec des tiers",
          p("Zemi Dede ne vend, ne loue et ne partage jamais vos données à des fins commerciales ou publicitaires.")
          + table(["Service", "Ce qui lui est envoyé", "Quand"], [
              ["Google Firebase Analytics et Crashlytics (Google LLC)", "Événements de jeu anonymes et rapports de plantage", "Si les statistiques sont activées et que les services Google sont présents"],
-             ["Google Play (Google LLC)", "Ce qu'il faut pour vérifier et livrer un achat ou une mise à jour", "Lors d'un achat intégré ou d'une mise à jour proposée par le Play Store"],
+             ["Google Play (Google LLC)", "Ce qu'il faut pour proposer une mise à jour", "Au lancement, si le jeu vient du Play Store"],
+             ["Stripe (Stripe, Inc.)", "Votre paiement : carte ou autre moyen saisi sur la page de Stripe, montant, e-mail de reçu", "Seulement si vous faites un achat"],
+             ["Google Firebase Cloud Functions (Google LLC)", "Identifiant d'installation et produit acheté, pour créer le paiement et livrer l'achat", "Seulement si vous faites un achat"],
              ["Autres joueurs du même Wi-Fi", "Votre pseudo, la couleur de votre moto et votre position dans le jeu", "Seulement pendant une partie en réseau local que vous avez lancée ou rejointe"]])
          + p("Le jeu en réseau local passe directement d'un téléphone à l'autre sur votre Wi-Fi : aucun serveur à nous ne reçoit ces échanges.")
          + callout("warning", "⚠️", "Nous pouvons divulguer des données si la loi l'exige, notamment en réponse à une demande judiciaire valide.")),
         ("paiements", "Achats intégrés",
-         p("Le jeu est gratuit. Si des achats intégrés sont proposés plus tard, le paiement est entièrement géré par Google Play : nous ne recevons jamais votre numéro de carte ni vos coordonnées bancaires, seulement la confirmation de l'achat.")),
+         p("Le jeu est gratuit. Si des achats intégrés sont proposés plus tard, le paiement se fait sur une page sécurisée de Stripe, prestataire de paiement certifié PCI-DSS. Nous ne recevons jamais votre numéro de carte ni vos coordonnées bancaires : notre serveur (Firebase Cloud Functions) reçoit seulement de Stripe la confirmation du paiement, le produit acheté et le montant, pour vous livrer l'achat. Stripe conserve les données de paiement selon sa propre politique de confidentialité.")),
         ("stockage", "Stockage et sécurité",
          p("Votre progression est stockée dans l'espace privé du jeu sur votre téléphone, inaccessible aux autres applications. Les statistiques sont envoyées chiffrées (HTTPS/TLS) et hébergées par Google Firebase.")
          + p("Aucun système n'est infaillible. En cas d'incident affectant des données personnelles, nous vous en informerons dans les meilleurs délais, conformément aux obligations légales.")),
@@ -156,7 +158,7 @@ doc("politique-confidentialite.html", "Politique de confidentialité — Zemi De
         ("mineurs", "Protection des mineurs",
          p(f"Zemi Dede n'est pas destiné aux enfants de moins de 13 ans et nous ne collectons pas sciemment leurs données. Si vous pensez qu'un enfant nous a transmis des données, écrivez à {M} pour que nous les supprimions.")),
         ("transferts", "Transferts internationaux",
-         p("Google peut traiter les statistiques sur des serveurs situés hors de votre pays, notamment aux États-Unis, dans le cadre de mécanismes reconnus (clauses contractuelles types).")),
+         p("Google et Stripe peuvent traiter des données sur des serveurs situés hors de votre pays, notamment aux États-Unis, dans le cadre de mécanismes reconnus (clauses contractuelles types).")),
         ("modifications", "Modifications de cette politique",
          p("Nous pouvons mettre à jour cette politique. La date de dernière mise à jour figure en haut de ce document ; toute modification importante sera signalée dans le jeu.")),
         ("contact", "Nous contacter",
@@ -182,7 +184,7 @@ doc("conditions-utilisation.html", "Conditions d'utilisation — Zemi Dede", "Co
              "N'utilisez pas de logiciel de triche qui gâche la partie des autres joueurs",
              "Ne tentez pas de perturber, pirater ou désassembler le jeu pour nuire à autrui"])),
         ("achats", "Achats intégrés",
-         p("Le jeu est gratuit. Si des achats intégrés (objets ou monnaie virtuels) sont proposés, ils sont vendus par Google Play selon ses propres conditions et politique de remboursement. Les objets virtuels n'ont aucune valeur monétaire réelle et ne peuvent être ni échangés ni convertis en argent.")),
+         p("Le jeu est gratuit. Si des achats intégrés (objets ou monnaie virtuels) sont proposés, le paiement est traité par Stripe et l'achat est livré dans le jeu dès que le paiement est confirmé. Les prix sont affichés toutes taxes comprises avant le paiement. Pour un problème de paiement ou une demande de remboursement, écrivez-nous dans les 14 jours suivant l'achat : nous répondons sous 7 jours. Les objets virtuels n'ont aucune valeur monétaire réelle et ne peuvent être ni échangés ni convertis en argent.")),
         ("mises-a-jour", "Mises à jour",
          p("Nous publions régulièrement des mises à jour. Le jeu peut vous proposer de l'installer depuis le Play Store ; certaines fonctions, comme le jeu en réseau, peuvent exiger que tous les joueurs aient la même version.")),
         ("propriete", "Propriété intellectuelle",
@@ -212,7 +214,7 @@ doc("suppression-donnees.html", "Suppression des données — Zemi Dede", "Suppr
          p("Pour que le jeu n'envoie plus rien, coupez <em>Réglages › Statistiques anonymes</em> dans le jeu.")
          + p(f"Pour supprimer les statistiques déjà envoyées, écrivez à <a href=\"mailto:{MAIL}?subject=Suppression%20de%20mes%20donn%C3%A9es%20Zemi%20Dede\">{MAIL}</a> avec pour objet « Suppression de mes données Zemi Dede », en joignant l'identifiant affiché dans <em>Réglages › À propos</em>. Nous les supprimons sous 30 jours et vous le confirmons.")),
         ("achats", "Achats",
-         p("L'historique de vos achats Google Play est conservé par Google selon ses propres règles, et peut être consulté depuis votre compte Google Play.")),
+         p("Les traces de paiement (reçu, montant, date) sont conservées par Stripe et par nous le temps exigé par les obligations comptables et fiscales, même après une demande de suppression.")),
         ("conservation", "Données conservées après suppression",
          p("Nous ne conservons aucune copie de vos données après suppression, sauf si la loi nous y oblige. Sans demande de votre part, les statistiques sont effacées automatiquement après 14 mois.")),
     ])
